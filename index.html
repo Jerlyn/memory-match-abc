@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Memory Match ABC - A fun matching game for toddlers to learn letters and numbers">
+    <title>Memory Match ABC</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1>Memory Match ABC</h1>
+            <div class="game-controls">
+                <button id="start-button" class="btn primary-btn" aria-label="Start new game">New Game</button>
+                <div class="game-options">
+                    <fieldset>
+                        <legend>Game Mode</legend>
+                        <div class="radio-group">
+                            <input type="radio" id="letters-mode" name="game-mode" value="letters" checked>
+                            <label for="letters-mode">Letters</label>
+                            
+                            <input type="radio" id="numbers-mode" name="game-mode" value="numbers">
+                            <label for="numbers-mode">Numbers</label>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Difficulty</legend>
+                        <div class="radio-group">
+                            <input type="radio" id="easy-mode" name="difficulty" value="easy" checked>
+                            <label for="easy-mode">Easy (6 pairs)</label>
+                            
+                            <input type="radio" id="medium-mode" name="difficulty" value="medium">
+                            <label for="medium-mode">Medium (9 pairs)</label>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="score-container" aria-live="polite">
+                <div class="matches">Matches: <span id="match-count">0</span></div>
+                <div class="attempts">Attempts: <span id="attempt-count">0</span></div>
+            </div>
+        </header>
+
+        <main>
+            <div id="game-board" class="game-board" aria-label="Memory match game board"></div>
+            
+            <div id="success-modal" class="modal" role="dialog" aria-labelledby="success-title" aria-hidden="true">
+                <div class="modal-content">
+                    <h2 id="success-title">Hooray! You did it!</h2>
+                    <p>You found all the matches in <span id="final-attempts">0</span> attempts!</p>
+                    <div class="celebration">
+                        <div class="star">⭐</div>
+                        <div class="star">⭐</div>
+                        <div class="star">⭐</div>
+                    </div>
+                    <button id="play-again" class="btn primary-btn">Play Again</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>A fun educational game for toddlers</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
